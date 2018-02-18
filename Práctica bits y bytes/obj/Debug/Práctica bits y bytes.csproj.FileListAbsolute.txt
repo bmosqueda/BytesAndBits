@@ -1,0 +1,10 @@
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\bin\Debug\Práctica bits y bytes.exe.config
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\bin\Debug\Práctica bits y bytes.exe
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\bin\Debug\Práctica bits y bytes.pdb
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica bits y bytes.csprojResolveAssemblyReference.cache
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica_bits_y_bytes.Form1.resources
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica_bits_y_bytes.Properties.Resources.resources
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica bits y bytes.csproj.GenerateResource.Cache
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica bits y bytes.csproj.CoreCompileInputs.cache
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica bits y bytes.exe
+C:\Users\brand\source\repos\Práctica bits y bytes\Práctica bits y bytes\obj\Debug\Práctica bits y bytes.pdb
