@@ -59,15 +59,21 @@ namespace Práctica_bits_y_bytes
 
             int dia = num & 31;
             if (dia == 0)
+            {
+                MessageBox.Show("El dia número " + 0 + " no puede ser representado como dia, en su lugar se puso 1");
                 dia++;
+            }
             num >>= 5;
 
             int mes = num & 15;
             if (mes == 0)
+            {
+                MessageBox.Show("El mes número " + 0 + " no puede ser representado como mes, en su lugar se puso Enero (1)");
                 mes++;
+            }
             else if( mes > 12 )
             {
-                MessageBox.Show("El mes número " + mes + " no puede ser representado, en su lugar se puso Diciembre (12)");
+                MessageBox.Show("El mes número " + mes + " no puede ser representado como mes, en su lugar se puso Diciembre (12)");
                 mes = 12;
             }
             num >>= 4;
@@ -145,6 +151,7 @@ namespace Práctica_bits_y_bytes
                     break;
                 default:
                     imgFull.Size = new Size(90,140);
+                    //Dispara la animación de llenado
                     timer1.Start();
                     lblProcesoLLenado.Text = "Llenándose";
                     break;
@@ -168,18 +175,31 @@ namespace Práctica_bits_y_bytes
             }
             else
             {
-                tamanio -= 10;
+                tamanio -= 2;
                 imgFull.Height = tamanio;
             }
         }
 
-        private void verBinario( int num )
+        private void btnAjustarFecha_Click(object sender, EventArgs e)
+        {
+            DateTime fecha = datePicker.Value;
+
+            int dia = fecha.Day;
+            int mes = fecha.Month;
+            int anio = fecha.Year - 1900;
+
+            int fechaBinaria = (dia & 31) + ((mes & 15) << 5) + ((anio & 127) << 9);
+
+            txtFechaDecimal.Text = fechaBinaria.ToString();
+        }
+
+        private void verBinario(int num)
         {
             string binario = "";
-            
-            for( int i = 0; i < 32; i++ )
+
+            for (int i = 0; i < 32; i++)
             {
-                if( num % 2 == 0 )
+                if (num % 2 == 0)
                 {
                     binario = "0" + binario;
                 }
@@ -194,58 +214,7 @@ namespace Práctica_bits_y_bytes
                 num >>= 1;
             }
 
-            Console.WriteLine("Binario: " + binario );
-        }
-
-        private void btnAjustarFecha_Click(object sender, EventArgs e)
-        {
-            DateTime fecha = datePicker.Value;
-
-            int dia = fecha.Day;
-            int mes = fecha.Month;
-            int anio = fecha.Year - 1900;
-
-            string fechaEnBinario = toBinary(anio, 7) + toBinary(mes, 4) + toBinary(dia, 5);
-
-            Console.WriteLine("Año: " + anio + " Mes: " + mes + " Día: " + dia);
-            Console.WriteLine("Fecha en binario: "+ fechaEnBinario);
-            Console.WriteLine("Fecha en decimal: " + toDecimal(fechaEnBinario));
-
-            txtFechaDecimal.Text = toDecimal(fechaEnBinario).ToString();
-        }
-
-        private int toDecimal( string binario )
-        {
-            int num = 0;
-            int potencia = 15;
-            for( int i = 0; i < 16; i++, potencia-- )
-            {
-                if( binario[i] == '1')
-                {
-                    num += (int)Math.Pow(2, potencia);
-                }
-            }
-            return num;
-        }
-
-        private string toBinary(int num, int digitos)
-        {
-            string binario = "";
-            for( int i = 1; i <= digitos; i++ )
-            {
-                if( num % 2 == 0 )
-                {
-                    binario = "0" + binario;
-                }
-                else
-                {
-                    binario = "1" + binario;
-                }
-                num >>= 1;
-            }
-
-            Console.WriteLine(binario);
-            return binario;
+            Console.WriteLine("Binario: " + binario);
         }
     }
 }
